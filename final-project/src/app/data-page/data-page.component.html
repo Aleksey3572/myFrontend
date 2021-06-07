@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="dataTable">
+    <div class="dataTable__header">
+      <div class="dataTable__iconCategories">
+        <svg-icon src="assets/categories.svg"></svg-icon>
+      </div>
+      <div class="dataTable__categories">Показатели</div>
+      <div class="dataTable__iconOption">
+        <svg-icon src="assets/option.svg"></svg-icon>
+      </div>
+    </div>
+    <div class="dataTable__body">
+      <div class="dataTable__titles">
+        <div class="dataTable__leftTitle">Параметры</div>
+        <div class="dataTable__rightTitles">
+          <div class="dataTable__fact">Факт</div>
+          <div class="dataTable__model">Модель</div>
+        </div>
+      </div>
+      <div class="dataTable__wrapper">
+        <div class="dataTable__scrollbar">
+          <div class="dataTable__components">
+            <app-drop-menu *ngFor="let item of this.dataService.dataParameters" [data]="item" ></app-drop-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

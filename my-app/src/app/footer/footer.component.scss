@@ -1,0 +1,33 @@
+.container{
+  padding: 8px 22px 18px 22px;
+  background: rgba(31, 34, 46, 0.5);
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__status{
+    min-width: 165px;
+    padding: 8px 9px 12px 9px;
+    display: flex;
+    border-bottom: 2px solid #606580;
+    cursor: pointer;
+    &:hover{
+      border-bottom: 2px solid #0089FF;
+      background: linear-gradient(0deg, rgba(35, 120, 217, 0.25) 0%, rgba(35, 120, 217, 0) 100%);
+      color: white;
+    }
+  }
+  &__number{
+    margin-left: auto;
+  }
+  &__footer{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.container__status-active{
+  border-bottom: 2px solid #0089FF;
+  background: linear-gradient(0deg, rgba(35, 120, 217, 0.25) 0%, rgba(35, 120, 217, 0) 100%);
+  color: white;
+}

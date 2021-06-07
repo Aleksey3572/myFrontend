@@ -1,0 +1,29 @@
+<div tabindex="-1" class="task" (click)="isSelect()" (blur)="closeSelectItem()" [ngClass]="{
+'task_mediumPriority': data.priority === 2,
+'task_highPriority': data.priority === 3,
+'task-active': flag && data.priority === 1,
+'task_mediumPriority-active': flag && data.priority === 2,
+'task_highPriority-active': flag && data.priority === 3
+}">
+  <div class="task__header">
+    <div class="task__number">{{index}}</div>
+    <div class="task__subcategory">{{data.subcategory}}</div>
+    <div class="task__installation">{{data.installation}}</div>
+    <time class="task__date" datetime="дата и время">{{data.date}}</time>
+  </div>
+  <div class="task__content">
+    <div>
+      <h1 class="task__event">{{data.title}}</h1>
+      <p class="task__count">{{data.text}}</p>
+    </div>
+    <ul class="task__sidebar">
+      <li class="task__status">{{data.status}}</li>
+      <li class="task__graph">
+        <svg-icon src='{{data.src}}'></svg-icon>
+      </li>
+      <li class="task__delete" (click)="this.functionalService.deleteElement(data)">
+        <svg-icon src="assets/delete.svg"></svg-icon>
+      </li>
+    </ul>
+  </div>
+</div>

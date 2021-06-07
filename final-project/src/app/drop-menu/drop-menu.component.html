@@ -1,0 +1,24 @@
+<div class="component">
+  <div class="component__preview" (click)="isSelect()">
+    <div class="component__leftSidebar">
+      <div class="component__icon" [class.component__icon-active]="!flag">
+        <svg-icon src="assets/icon_component.svg"></svg-icon>
+      </div>
+      <div class="component__name">{{this.data.name}}</div>
+    </div>
+    <div class="component__deviations">Отклонений: {{this.deviation}}</div>
+  </div>
+  <div class="component__wrapper" [class.component__wrapper-closed]="flag">
+    <div tabindex="-1" class="component__option" *ngFor="let item of this.data.works let i = index" (click)="isElem(i)" (blur)="deleteFocus()" [ngClass]="{
+'component__option-highPriority': item.dataFact !== item.dataModel,
+'component__option-active': index === i
+}">
+      <div class="component__optionLeftBlock">
+        <div class="component__optionWorkName">{{item.workName}}</div>
+        <div class="component__optionUnits">Ед.изм.</div>
+      </div>
+      <div class="component__optionCenterBlock">{{item.dataFact}}</div>
+      <div class="component__optionRightBlock">{{item.dataModel}}</div>
+    </div>
+  </div>
+</div>

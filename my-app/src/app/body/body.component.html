@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="container__post" *ngIf="this.functionalService.activeIndex == 0" >
+    <app-post *ngFor="let item of this.functionalService.showData let i = index" [data]="item" [index]="i + 1"></app-post>
+  </div>
+  <div class="container__work" *ngIf="this.functionalService.activeIndex == 1" >
+    <app-work [ngStyle]="{'width':'48.5%'}" *ngFor="let item of this.functionalService.showData let i = index" [data]="item" [index]="i + 1"></app-work>
+  </div>
+</div>

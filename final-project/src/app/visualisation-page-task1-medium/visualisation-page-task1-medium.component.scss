@@ -1,0 +1,17 @@
+.container{
+  min-height: 415px;
+  max-height: 1020px;
+  margin-top: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.wrapper{
+  width: 340px;
+  height: 340px;
+  &__visualisationData{
+    width: 340px;
+    height: 340px;
+  }
+}

@@ -1,0 +1,64 @@
+.select{
+  display: inline-block;
+  background: rgba(18, 21, 30, 0.5);
+  border: 1px solid rgba(96, 101, 128, 0.25);
+  padding: 6px 12px 8px 14px;
+  width: 150px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 2px;
+  outline: none;
+  &__preview{
+    display: flex;
+  }
+  &__text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__arrow{
+    margin-left: auto;
+  }
+  &__wrapper{
+    position: absolute;
+    background: rgb(18, 21, 30);
+    right: 0;
+    top: 0;
+    width: 100%;
+    transition: 200ms ease-out;
+    z-index: 1;
+    transform-origin: top;
+    opacity: 1;
+    cursor: pointer;
+    max-height: 150px;
+    overflow-y: auto;
+    &-closed{
+      opacity: 0;
+      transform: scaleY(0);
+    }
+  }
+  &__option{
+    line-height: 30px;
+    padding: 0px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover{
+      border: 1px solid rgba(96, 101, 128, 0.25);
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(#272A38, 1);
+  border: 2px solid #1B1E27;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4.5px;
+  background-color: rgba(96, 101, 128, 0.5);
+}
+

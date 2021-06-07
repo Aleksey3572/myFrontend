@@ -1,0 +1,102 @@
+.component{
+  &__preview{
+    display: flex;
+    padding: 7px 17px 8px 11px;
+    background: #272A38;
+    width: 353px;
+    height: 30px;
+    border-left: 2px solid #606580;
+    align-items: center;
+    cursor: pointer;
+
+  }
+  &__leftSidebar{
+    display: flex;
+    gap: 10px;
+  }
+  &__icon{
+    transition: 200ms ease-out;
+    &-active{
+      transform: rotate(45deg);
+    }
+  }
+  &__name{
+    margin-top: 3px;
+  }
+  &__deviations{
+    margin-left: auto;
+    margin-top: -3px;
+  }
+  &__wrapper{
+    padding: 10px 0px 0px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: 400ms ease-out;
+    transform-origin: top;
+    &-closed{
+      width: 0;
+      height: 0;
+      padding: 0px 0px 0px 0px;
+      overflow: hidden;
+      transform: scaleY(0);
+    }
+  }
+  &__option{
+    display: flex;
+    width: 337px;
+    height: 32px;
+    background: #212531;
+    border-right: 1px solid #1C1F2B;
+    border-left: 2px solid #606580;
+    padding: 0px 0px 0px 9px;
+    align-items: center;
+    cursor: pointer;
+    &-highPriority{
+      border: 1px solid #F7931E;
+      border-left: 2px solid #F7931E;
+      .component__optionWorkName{
+        color: #D7E2F2;
+      }
+    }
+    &-active{
+       border: 1px solid #0089FF;
+       border-left: 2px solid #0089FF;
+       .component__optionWorkName{
+         color: #D7E2F2;
+       }
+     }
+  }
+  &__optionLeftBlock{
+    display: flex;
+    width: 195px;
+    padding: 0px 3px 0px 0px;
+  }
+  &__optionWorkName{
+    display: flex;
+    align-items: center;
+    width: 130px;
+    height: 29px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__optionUnits{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  &__optionCenterBlock{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    border-left: 1px solid #1C1F2B;
+    border-right: 1px solid #1C1F2B;
+    height: 32px;
+    align-items: center;
+  }
+  &__optionRightBlock{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+}

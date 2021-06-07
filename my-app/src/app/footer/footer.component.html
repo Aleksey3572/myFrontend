@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="container__header">
+    <div class="container__status" *ngFor="let elem of this.functionalService.dataService.statusBlock"
+         (click)="isSelect(elem)" [class.container__status-active]="elem.status === this.functionalService.dataService.allFilters.statusFilterValue ||
+(elem.status === 'Отработано' && this.functionalService.dataService.allFilters.statusFilterValue === 'Завершено')">
+      <div>{{elem.status}}</div>
+      <div class="container__number">{{elem.count}}</div>
+    </div>
+  </div>
+  <div class="container__footer">
+    <app-filter *ngFor="let item of this.functionalService.dataService.filterBlockData" [data]="item"></app-filter>
+  </div>
+</div>

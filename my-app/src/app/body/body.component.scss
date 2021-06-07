@@ -1,0 +1,34 @@
+.container{
+  background: #171A24;
+  padding: 30px 20px 24px 20px;
+  width: 936px;
+  &__post{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 709px;
+    overflow-y: auto;
+  }
+  &__work{
+    display: flex;
+    gap: 11px;
+    flex-wrap: wrap;
+    height: 709px;
+    overflow-y: auto;
+    align-content: flex-start;
+  }
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(#272A38, 1);
+  border: 2px solid #1B1E27;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4.5px;
+  background-color: rgba(96, 101, 128, 0.5);
+}
+

@@ -1,0 +1,11 @@
+<div tabindex="-1" class="select" (click)="isClick()" (blur)="closeDropDown()">
+  <div class="select__preview" >
+    <div class="select__text"> {{name === 'Установка' ? this.functionalService.menu1 : this.functionalService.menu2}}</div>
+    <div class="select__arrow">
+      <svg-icon src="assets/arrow_drop_menu.svg"></svg-icon>
+    </div>
+  </div>
+  <div class="select__wrapper" [class.select__wrapper-closed]="flag">
+    <div class="select__option" *ngFor="let item of list" (click)="selectItem(item)">{{item}}</div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+  <form class="wrapper" [formGroup]="form" (ngSubmit)="signIn()">
+    <svg-icon class="wrapper__logo" src="assets/logo.svg"></svg-icon>
+    <label><input #login (click)="setFocus(1)" (blur)="deleteFocus(1)" [class.wrapper__input-focus]="this.numberInput == 1" formControlName="login" class="wrapper__input" type="text" placeholder="Логин" ><svg-icon class="wrapper__leftIcon" src="assets/user.svg"></svg-icon></label>
+    <label><input #password (click)="setFocus(2)" (blur)="deleteFocus(2)" [class.wrapper__input-focus]="this.numberInput == 2" formControlName="password" class="wrapper__input" [type]="showPassword ? 'text' : 'password'" placeholder="Пароль" >
+      <span class="wrapper__leftIcon"><svg-icon  src="assets/lock.svg"></svg-icon></span>
+      <span tabindex="-1" (blur)="deleteFocus(1)" class="wrapper__rightIcon" (click)="viewPassword()" (mouseover)="setFocus(3)" (mouseout)="deleteFocus(3)" ><svg-icon  src="{{this.iconImage}}"></svg-icon></span>
+    </label>
+    <button type="submit" class="wrapper__button" [disabled]="form.invalid">Войти</button>
+  </form>
+</div>

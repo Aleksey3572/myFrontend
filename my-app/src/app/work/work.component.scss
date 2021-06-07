@@ -1,0 +1,126 @@
+@import "src/assets/variables.scss";
+@import "src/assets/mixin.scss";
+@import "src/app/post/post.component.scss";
+
+.work {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &_gear {
+    fill: #0089FF;
+  }
+
+  &__header {
+    display: flex;
+    background: rgba(39, 42, 56, 0.5);
+    border-radius: 2px 2px 0px 0px;
+    padding: 0.6875rem 0.8125rem 0.9375rem 1.25rem;  //11px 13px 15px 20px
+  }
+
+  &__left {
+    display: flex;
+    gap: 1.5rem;  //24px
+  }
+
+  &__number {
+    @include text-setting(0.875rem, 1.0625rem, white ); //font-size: 0.875rem; //14px //line-height: 1.0625rem; //17px
+  }
+
+  &__abbreviation {
+    @include text-setting(1rem, 1.1875rem, white ); //font-size: 1rem; //16px //line-height: 1.1875rem; //19px
+  }
+
+  &__sidebar-header {
+    @extend .task__sidebar;
+  }
+
+  &__status {
+    @include text-setting(0.875rem, 1.0625rem, #606580 ); //font-size: 0.875rem; //14px //line-height: 1.0625rem; //17px
+  }
+
+  &__clock {
+    fill: #606580;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    background: rgba(31, 34, 46, 0.5);
+    padding: 1rem 4.25rem 1.875rem 1.25rem;  //16px 68px 30px 20px
+  }
+
+  &__title {
+    @include text-setting(1.125rem, 1.25rem, white ); //font-size: 1.125rem; //18px //line-height: 1.25rem; //20px
+    margin-bottom: 0.5625rem;  //9px
+  }
+
+  &__text {
+    @include text-setting(1.125rem, 1.25rem, $colorCount ); //font-size: 1.125rem; //18px //line-height: 1.25rem; //20px
+    text-overflow: ellipsis;
+  }
+
+  &__footer {
+    display: flex;
+    background: rgba(39, 42, 56, 0.5);
+    padding: 0.375rem 0.8125rem 0.375rem 1.25rem; //6px 13px 6.91px 20px
+  }
+
+  &__event {
+    @include text-setting(0.75rem, 0.875rem, white ); //font-size: 0.75rem; //12px //line-height: 0.875rem; //14px
+    margin-bottom: 0.0625rem; //1px
+  }
+
+  &__date {
+    @include text-setting(1rem, 1.1875rem, white ); //font-size: 1rem; //16px //line-height: 1.1875rem; //19px
+  }
+
+  &__sidebar-footer {
+    @extend .task__sidebar;
+    align-items: center;
+  }
+
+  &__state {
+    background: rgba(93, 96, 123, 0.2);
+    border-radius: 2px;
+    min-width: 7.125rem; //114px
+    min-height: 1.5rem;  //24px
+    padding: 0.25rem 0.8125rem 0.375rem 0.75rem; //4px 13px 6px 12px
+    @include text-setting(0.75rem, 0.875rem, white ); //font-size: 0.75rem; //12px //line-height: 0.875rem; //14px
+    white-space: nowrap;
+  }
+
+  &__delete {
+    cursor: pointer;
+    fill: #606580;
+    height: 0.875rem;
+    margin-bottom: 0.3125rem;
+    &:hover {
+      fill: #8C99B2;
+    }
+  }
+}
+
+.work_mediumPriority {
+
+  .work__status {
+    color: #F7931E;
+  }
+
+  .work__clock {
+    fill: #F7931E;
+  }
+}
+
+.work_highPriority {
+
+  .work__status {
+    color: #FF0000;
+  }
+
+  .work__clock {
+    fill: #FF0000;
+  }
+}
+
+

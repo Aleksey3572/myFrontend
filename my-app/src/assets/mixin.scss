@@ -1,0 +1,5 @@
+@mixin text-setting($fontSize, $lineHeight, $color) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $color;
+}

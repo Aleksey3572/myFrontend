@@ -1,0 +1,14 @@
+<div class="filter" (click)="isSelect()" [class.filter_selected]="this.functionalService.dataService
+.allFilters.subcategoryFiltersValue.indexOf(this.data.subcategory) !== -1">
+  <div class="filter__header">
+    <h1 class="filter__title">{{data.subcategory}}</h1>
+  </div>
+  <div class="filter__footer">
+    <span class="filter__image">
+      <svg-icon src="{{data.src}}"></svg-icon>
+    </span>
+    <span class="filter__attitude">
+      {{data.leftNumber}} / {{data.rightNumber}}
+    </span>
+  </div>
+</div>

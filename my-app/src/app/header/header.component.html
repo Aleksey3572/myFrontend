@@ -1,0 +1,23 @@
+<div class="header">
+  <ul class="header__sidebar-left">
+    <li class="header__icon">
+      <svg-icon src="assets/letter.svg"></svg-icon>
+    </li>
+    <li class="header__event">События</li>
+  </ul>
+  <ul class="header__sidebar-right">
+    <li class="header__view" *ngFor="let item of list let i = index" (click)="onSelectItem(i)" [class.header__view-active]="i == this.functionalService.activeIndex">
+      <svg-icon src="{{item}}"></svg-icon>
+    </li>
+  </ul>
+</div>
+  <div class="filters">
+    <div class="filters__wrapper">
+      <app-drop-down-menu [list]="this.functionalService.dataService.dropMenuItems1" [name]="'Установка'"></app-drop-down-menu>
+      <app-drop-down-menu [list]="this.functionalService.dataService.dropMenuItems2" [name]="'Приоритет'"></app-drop-down-menu>
+      <button class="filters__clear" (click)="this.functionalService.clearFilters()">Сбросить фильтры</button>
+      <input type="text" class="filters__search" name="search" placeholder="Поиск"
+             [(ngModel)]="this.functionalService.dataService.allFilters.searchFilterValue" (keyup)="searchTitle()">
+    </div>
+  </div>
+

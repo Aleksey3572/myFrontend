@@ -1,0 +1,77 @@
+@import "src/assets/variables.scss";
+@import "src/assets/mixin.scss";
+
+.header{
+  background: rgba(39, 42, 56, 0.5);
+  padding: 13px 13px 13px 13px;
+  display: flex;
+    &__sidebar-left{
+      list-style: none;
+      display: flex;
+      gap: 1rem; //16px
+      align-items: flex-start;
+    }
+    &__icon{
+      margin-top: 2px;
+      fill: #606580;
+    }
+    &__event{
+      @include text-setting($fontSizePrimary, 1rem, $colorEvent ); //line-height: 1rem; //16px
+    }
+    &__sidebar-right{
+      list-style: none;
+      display: flex;
+      margin-left: auto;
+      gap: 1rem; //16px
+      align-items: flex-start;
+    }
+    &__view{
+      display: flex;
+      height: 14px;
+      width: 14px;
+      cursor: pointer;
+      fill: #616580;
+      justify-content: center;
+    }
+}
+.header__view-active{
+  fill: #0089FF;
+}
+.filters{
+  background: #181B25;
+  padding: 16px 18px 15px 21px;
+  &__wrapper{
+    display: flex;
+    gap: 15px;
+  }
+  &__clear {
+    min-width: 9.375rem; //150px
+    background: rgba(48, 53, 73, 0.5);
+    border-radius: 1px;
+    @include text-setting($fontSizePrimary, 1rem, $colorCount ); //line-height: 1rem; //16px
+    min-height: 1.875rem;  //30px
+    border: 0;
+    outline: none;
+    padding: 0.375rem 1.1875rem 0.5rem 1.125rem;  //6px 19px 8px 18px
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      background: #0089FF;
+      color: white;
+    }
+  }
+  &__search {
+    margin-left: auto;
+    background: rgba(18, 21, 30, 0.5);
+    border: 1px solid rgba(96, 101, 128, 0.25);
+    color: #8C99B2;
+    padding: 7px 15px;
+    width: 188px;
+    border-radius: 2px;
+    &:focus{
+      outline :none;
+    }
+  }
+}
+

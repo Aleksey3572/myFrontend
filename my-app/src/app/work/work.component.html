@@ -1,0 +1,36 @@
+<div class="work" [ngClass]="{
+'work_mediumPriority': data.priority === 2,
+'work_highPriority': data.priority === 3
+}">
+  <div class="work__header">
+    <div class="work__left">
+      <p class="work__number">{{index}}</p>
+      <p class="work__abbreviation">{{data.installation}}</p>
+    </div>
+    <ul class="work__sidebar-header">
+      <li class="work__status">{{data.status}}</li>
+      <li class="work__clock">
+        <svg-icon src="assets/clock.svg"></svg-icon>
+      </li>
+      <li class="work_gear">
+        <svg-icon src="{{data.src}}"></svg-icon>
+      </li>
+    </ul>
+  </div>
+  <div class="work__content">
+    <h1 class="work__title">{{data.title}}</h1>
+    <p class="work__text">{{data.text}}</p>
+  </div>
+  <div class="work__footer">
+    <div>
+      <p class="work__event">Начало события:</p>
+      <time class="work__date">{{data.date}}</time>
+    </div>
+    <ul class="work__sidebar-footer">
+      <li class="work__state">{{data.state}}</li>
+      <li class="work__delete" (click)="this.functionalService.deleteElement(data)">
+        <svg-icon src="assets/delete.svg"></svg-icon>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+@import "src/assets/variables.scss";
+@import "src/assets/mixin.scss";
+
+.filter {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 9.625rem;
+  min-height: 82px;
+  padding: 0.6875rem 0.5625rem 0.625rem 0.75rem;  // 11px 9.5px 10px 12px
+  border: 1px solid rgba(96, 101, 128, 0.25);
+  border-left: 2px solid #606580 ;
+  background: linear-gradient(90deg, #5B607D -270%, rgba(91, 96, 125, 0) 75%) no-repeat;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #0487FD -270%, rgba(4, 135, 253, 0) 65%) no-repeat;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    border-left: 2px solid #0089FF;
+    transition: all 0.7s ease-in-out;
+
+    .filter__image {
+      fill: #0089FF;
+    }
+
+    .filter__title {
+      color: white;
+    }
+
+    .filter__attitude {
+      color: white;
+    }
+  }
+
+  &__title {
+    transition: all 0.7s ease-in-out;
+    max-width: 10.75rem;
+    @include text-setting($fontSizePrimary, 1rem, $colorCount ); //line-height: 1rem; //16px
+  }
+
+  &__footer {
+    display: flex;
+  }
+
+  &__image {
+    transition: all 0.7s ease-in-out;
+    fill: #606580;
+  }
+
+  &__attitude {
+    transition: all 0.7s ease-in-out;
+    margin-left: auto;
+    @include text-setting(1.125rem, 1.375rem, #606580 ); //font-size: 1.125rem //18px //line-height: 1.375rem; //22px
+  }
+}
+
+.filter_selected {
+  border-left: 2px solid #0089FF;
+  background: linear-gradient(90deg, #0487FD -270%, rgba(4, 135, 253, 0) 65%) no-repeat;
+  .filter__image {
+    fill: #0089FF;
+  }
+
+  .filter__title {
+    color: white;
+  }
+
+  .filter__attitude {
+    color: white;
+  }
+
+}
